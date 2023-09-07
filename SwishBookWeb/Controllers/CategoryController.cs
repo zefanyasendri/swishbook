@@ -20,13 +20,13 @@ namespace SwishBookWeb.Controllers
             return View(objCategoryList);
         }
 
-        // GET
+        // Create GET
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST
+        // Create POST
         [HttpPost]
         [ValidateAntiForgeryToken] //not required
         public IActionResult Create(Category obj)
@@ -45,7 +45,7 @@ namespace SwishBookWeb.Controllers
             return View(obj);
         }
 
-        // GET
+        // Update GET
         public IActionResult Update(int? id)
         {
             if(id == null || id == 0)
@@ -63,7 +63,7 @@ namespace SwishBookWeb.Controllers
             return View(categoryDb);
         }
 
-        // POST
+        // Update POST
         [HttpPost]
         [ValidateAntiForgeryToken] //not required
         public IActionResult Update(Category obj)
@@ -80,6 +80,41 @@ namespace SwishBookWeb.Controllers
                 return RedirectToAction("Index");
             }
             return View(obj);
+        }
+
+        // Delete GET
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var categoryDb = _db.Categories.Find(id);
+            // var categoryDbFirst = _db.Categories.FirstOrDefault(u => u.Id == id);
+            // var categoryDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
+
+            if (categoryDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryDb);
+        }
+
+        // Delete POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken] //not required
+        public IActionResult DeletePOST(int? id)
+        {
+            var obj = _db.Categories.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            _db.Categories.Remove(obj);
+            _db.SaveChanges();
+            // return redirect to index
+            return RedirectToAction("Index");
         }
     }
 }
