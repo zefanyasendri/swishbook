@@ -22,8 +22,8 @@ ASP.NET Core and C# web application for book category management.
 </p>
 
 <p align="center">
-    <img src="https://github.com/zefanyasendri/swishbook/blob/master/SwishBookWeb/wwwroot/assets/category%20list%203.png" alt="catlistpc" style="margin-right: 10px;" width="450">
-  <img src="https://github.com/zefanyasendri/swishbook/blob/master/SwishBookWeb/wwwroot/assets/update%202.png" alt="test" style="margin-right: 10px;" width="450">
+    <img src="https://github.com/zefanyasendri/swishbook/blob/master/SwishBookWeb/wwwroot/assets/category%20list%203.png" alt="catlistpc" style="margin-right: 10px;" width="400">
+  <img src="https://github.com/zefanyasendri/swishbook/blob/master/SwishBookWeb/wwwroot/assets/update%202.png" alt="test" style="margin-right: 10px;" width="400">
 
   <img src="https://github.com/zefanyasendri/swishbook/blob/master/SwishBookWeb/wwwroot/assets/db.png" alt="test" style="margin-right: 10px;" width="550">
 </p>
